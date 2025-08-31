@@ -4,8 +4,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-cabecalho',
-  standalone: true,
-  template: './cabecalho.comment.html',
+  standalone: true, // tornar independente
+  template: './cabecalho.component.html',
 })
 export class CabecalhoComponent {}
 
