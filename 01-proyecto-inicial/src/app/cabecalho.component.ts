@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
 @Component({
   selector: 'app-cabecalho',
   standalone: true, // tornar independente
-  template: './cabecalho.component.html',
+  templateUrl: './cabecalho.component.html',
 })
 export class CabecalhoComponent {}
 
