@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CabecalhoComponent } from "./cabecalho.component";
+import { CabecalhoComponent } from "./cabecalho/cabecalho.component";
 
 @Component({
   selector: 'app-raiz',
