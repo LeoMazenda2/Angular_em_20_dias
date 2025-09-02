@@ -16,5 +16,10 @@ export class UsuarioComponent {
   get rotaImagem(){
     return 'assets/usuarios/' + this.usuarioSelecionado.avatar;
   }
+
+  aoSelecionarUsuario(){
+    const indiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length);
+    this.usuarioSelecionado = USUARIOS_FALSOS[indiceAleatorio];
+  }
 }
 
