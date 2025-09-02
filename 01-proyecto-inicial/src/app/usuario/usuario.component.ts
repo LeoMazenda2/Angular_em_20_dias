@@ -12,5 +12,9 @@ templateUrl: './usuario.component.html',
 })
 export class UsuarioComponent {
   public usuarioSelecionado = USUARIOS_FALSOS[indiceAleatorio];
+
+  get rotaImagem(){
+    return 'assets/usuarios/' + this.usuarioSelecionado.avatar;
+  }
 }
 
