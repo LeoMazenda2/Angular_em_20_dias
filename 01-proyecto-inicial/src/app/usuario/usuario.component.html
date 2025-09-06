@@ -1,10 +1,10 @@
 <div>
   <button (click)="aoSelecionarUsuario()">
     <img
-      [src]="rotaImagem"
-      alt="{{ usuarioSelecionado.nombre }}"
-      [title]="usuarioSelecionado.nombre"
+      [src]="rotaImagem()"
+      alt="{{ usuarioSelecionado().nombre }}"
+      [title]="usuarioSelecionado().nombre"
     >
-    <span>{{ usuarioSelecionado.nombre }}</span>
+    <span>{{ usuarioSelecionado().nombre }}</span>
   </button>
 </div>
