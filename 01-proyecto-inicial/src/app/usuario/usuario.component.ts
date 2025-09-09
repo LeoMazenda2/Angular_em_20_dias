@@ -14,6 +14,7 @@ export class UsuarioComponent {
   get rotaImagem() {
     return 'assets/usuarios/' +this.avatar;
   }
+
   aoSelecionarUsuario(){ }
 }
 
