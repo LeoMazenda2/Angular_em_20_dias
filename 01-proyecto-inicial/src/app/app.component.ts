@@ -11,4 +11,8 @@ import { USUARIOS_FALSOS } from './usuario/usuarios-falsos';
 })
 export class AppComponent {
   usuarios = USUARIOS_FALSOS;
+
+  aoSelecionarUsuario(id: string){
+    console.log('usuário selecionado com o id --> '+ id);
+  }
 }

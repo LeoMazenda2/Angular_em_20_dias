@@ -2,20 +2,44 @@
 <main>
   <ul id="usuarios">
     <li>
-      <app-usuario [avatar]="usuarios[0].avatar" [nome]="usuarios[0].nome" />
+      <app-usuario
+        [id]="usuarios[0].id"
+        [avatar]="usuarios[0].avatar"
+        [nome]="usuarios[0].nome"
+        (selecionado)="aoSelecionarUsuario($event)"
+      />
     </li>
-     <li>
-      <app-usuario [avatar]="usuarios[1].avatar" [nome]="usuarios[1].nome" />
+    <li>
+      <app-usuario
+        [id]="usuarios[1].id"
+        [avatar]="usuarios[1].avatar"
+        [nome]="usuarios[1].nome"
+        (selecionado)="aoSelecionarUsuario($event)"
+      />
     </li>
-     <li>
-      <app-usuario [avatar]="usuarios[2].avatar" [nome]="usuarios[2].nome" />
+    <li>
+      <app-usuario
+        [id]="usuarios[2].id"
+        [avatar]="usuarios[2].avatar"
+        [nome]="usuarios[2].nome"
+        (selecionado)="aoSelecionarUsuario($event)"
+      />
     </li>
-     <li>
-      <app-usuario [avatar]="usuarios[3].avatar" [nome]="usuarios[3].nome" />
+    <li>
+      <app-usuario
+        [id]="usuarios[3].id"
+        [avatar]="usuarios[3].avatar"
+        [nome]="usuarios[3].nome"
+        (selecionado)="aoSelecionarUsuario($event)"
+      />
     </li>
-     <li>
-      <app-usuario [avatar]="usuarios[6].avatar" [nome]="usuarios[6].nome" />
+    <li>
+      <app-usuario
+        [id]="usuarios[6].id"
+        [avatar]="usuarios[6].avatar"
+        [nome]="usuarios[6].nome"
+        (selecionado)="aoSelecionarUsuario($event)"
+      />
     </li>
   </ul>
 </main>
-
