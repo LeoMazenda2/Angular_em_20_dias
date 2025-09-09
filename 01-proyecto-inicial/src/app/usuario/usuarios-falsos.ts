@@ -31,7 +31,7 @@ export const USUARIOS_FALSOS = [
   },
   {
     id: 'u7',
-    nome: 'Leonildo Mazenda Serbio',
+    nome: 'Leonildo Mazenda',
     avatar: 'pass-lv.png',
   },
 ];
