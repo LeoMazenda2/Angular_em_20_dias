@@ -1,7 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
-
-import {USUARIOS_FALSOS} from '../usuario/usuarios-falsos';
-const indiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length);
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-usuario',
@@ -11,16 +8,12 @@ const indiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length);
   styleUrl: './usuario.component.css'
 })
 export class UsuarioComponent {
-  public usuarioSelecionado = signal(USUARIOS_FALSOS[indiceAleatorio]);
-  rotaImagem = computed(() => 'assets/usuarios/' + this.usuarioSelecionado().avatar)
+  @Input() avatar!: string;
+  @Input() nombre!: string;
 
-  // get rotaImagem(){
-  //   return 'assets/usuarios/' + this.usuarioSelecionado.avatar;
-  // }
-
-  aoSelecionarUsuario(){
-    const indiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length);
-    this.usuarioSelecionado.set(USUARIOS_FALSOS[indiceAleatorio]);
+  get rotaImagem() {
+    return 'assets/usuarios/' +this.avatar;
   }
+  aoSelecionarUsuario(){ }
 }
 

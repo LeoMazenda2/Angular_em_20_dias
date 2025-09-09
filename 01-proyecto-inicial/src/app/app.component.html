@@ -2,7 +2,16 @@
 <main>
   <ul id="usuarios">
     <li>
-      <app-usuario />
+      <app-usuario [avatar]="usuarios[0].avatar" [nombre]="usuarios[0].nombre" />
+    </li>
+     <li>
+      <app-usuario [avatar]="usuarios[1].avatar" [nombre]="usuarios[1].nombre" />
+    </li>
+     <li>
+      <app-usuario [avatar]="usuarios[2].avatar" [nombre]="usuarios[2].nombre" />
+    </li>
+     <li>
+      <app-usuario [avatar]="usuarios[3].avatar" [nombre]="usuarios[3].nombre" />
     </li>
   </ul>
 </main>
