@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
 @Component({
   selector: 'app-usuario',
@@ -12,6 +12,7 @@ export class UsuarioComponent {
   @Input({required: true}) avatar!: string;
   @Input({required: true}) nome!: string;
   @Output() selecionado = new EventEmitter();
+  // selecionado = output<string>();
 
   get rotaImagem() {
     return 'assets/usuarios/' +this.avatar;
