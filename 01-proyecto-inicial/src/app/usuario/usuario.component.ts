@@ -8,8 +8,8 @@ import { Component, Input, input } from '@angular/core';
   styleUrl: './usuario.component.css'
 })
 export class UsuarioComponent {
-  @Input() avatar!: string;
-  @Input() nombre!: string;
+  @Input({required: true}) avatar!: string;
+  @Input({required: true}) nome!: string;
 
   get rotaImagem() {
     return 'assets/usuarios/' +this.avatar;

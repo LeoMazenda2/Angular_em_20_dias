@@ -1,32 +1,37 @@
 export const USUARIOS_FALSOS = [
   {
     id: 'u1',
-    nombre: 'Antonia Céspedes',
+    nome: 'Antonia Céspedes',
     avatar: 'usuario-1.png',
   },
   {
     id: 'u2',
-    nombre: 'Emilia Torres',
+    nome: 'Emilia Torres',
     avatar: 'usuario-2.png',
   },
   {
     id: 'u3',
-    nombre: 'Marcos Jeremías',
+    nome: 'Marcos Jeremías',
     avatar: 'usuario-3.png',
   },
   {
     id: 'u4',
-    nombre: 'David Mercado',
+    nome: 'David Mercado',
     avatar: 'usuario-4.png',
   },
   {
     id: 'u5',
-    nombre: 'Pamela Chan',
+    nome: 'Pamela Chan',
     avatar: 'usuario-5.png',
   },
   {
     id: 'u6',
-    nombre: 'Adrián Serbio',
+    nome: 'Adrián Serbio',
     avatar: 'usuario-6.png',
+  },
+  {
+    id: 'u7',
+    nome: 'Leonildo Mazenda Serbio',
+    avatar: 'pass-lv.png',
   },
 ];
