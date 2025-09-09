@@ -12,6 +12,7 @@ export class UsuarioComponent {
   @Input({required: true}) avatar!: string;
   @Input({required: true}) nome!: string;
   @Output() selecionado = new EventEmitter();
+  // EventEmitter<string>();
   // selecionado = output<string>();
 
   get rotaImagem() {
