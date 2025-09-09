@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './terefas.component.css'
 })
 export class TerefasComponent {
-  @Input({required: true}) nome!: string;
+  @Input({required: true}) nome?: string;
 }

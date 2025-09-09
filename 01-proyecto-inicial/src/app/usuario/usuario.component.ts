@@ -8,19 +8,19 @@ import { Component, EventEmitter, Input, output, Output } from '@angular/core';
   styleUrl: './usuario.component.css'
 })
 export class UsuarioComponent {
-  @Input({required: true}) id!: string;
-  @Input({required: true}) avatar!: string;
-  @Input({required: true}) nome!: string;
-  @Output() selecionado = new EventEmitter();
-  // EventEmitter<string>();
-  // selecionado = output<string>();
+  @Input({required: true}) usuario!: {
+    id: string,
+    nome: string,
+    avatar: string
+  };
 
+  @Output() selecionado = new EventEmitter();
   get rotaImagem() {
-    return 'assets/usuarios/' +this.avatar;
+    return 'assets/usuarios/' +this.usuario.avatar;
   }
 
   aoSelecionarUsuario(){
-    this.selecionado.emit(this.id);
+    this.selecionado.emit(this.usuario.id);
    }
 }
 
