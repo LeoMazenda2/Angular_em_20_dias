@@ -1,41 +1,13 @@
 <app-cabecalho />
 <main>
   <ul id="usuarios">
-    <li>
-      <app-usuario
-        [usuario]="usuarios[0]"
-        (selecionado)="aoSelecionarUsuario($event)"/>
-    </li>
-    <li>
-      <app-usuario
-        [usuario]="usuarios[1]"
-        (selecionado)="aoSelecionarUsuario($event)"/>
-    </li>
-    <li>
-      <app-usuario
-        [usuario]="usuarios[2]"
-        (selecionado)="aoSelecionarUsuario($event)"/>
-    </li>
-    <li>
-      <app-usuario
-        [usuario]="usuarios[3]"
-        (selecionado)="aoSelecionarUsuario($event)"/>
-    </li>
-    <li>
-      <app-usuario
-        [usuario]="usuarios[4]"
-        (selecionado)="aoSelecionarUsuario($event)"/>
-    </li>
-    <li>
-      <app-usuario
-        [usuario]="usuarios[5]"
-        (selecionado)="aoSelecionarUsuario($event)"/>
-    </li>
-    <li>
-      <app-usuario
-        [usuario]="usuarios[6]"
-        (selecionado)="aoSelecionarUsuario($event)"/>
-    </li>
+    @for (usuario  of usuarios; track usuario.id) {
+      <li>
+        <app-usuario
+          [usuario]="usuario"
+          (selecionado)="aoSelecionarUsuario($event)"/>
+      </li>
+    }
   </ul>
 
   <app-terefas [nome]="usuariosSelecionado.nome" />
