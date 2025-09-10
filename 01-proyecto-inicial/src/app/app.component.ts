@@ -3,12 +3,11 @@ import { CabecalhoComponent } from "./cabecalho/cabecalho.component";
 import { UsuarioComponent } from "./usuario/usuario.component";
 import { USUARIOS_FALSOS } from './usuario/usuarios-falsos';
 import { TerefasComponent } from "./terefas/terefas.component";
-import { NgFor, NgIf } from "@angular/common";
 
 @Component({
   selector: 'app-raiz',
   standalone: true,
-  imports: [CabecalhoComponent, UsuarioComponent, TerefasComponent, NgFor, NgIf],
+  imports: [CabecalhoComponent, UsuarioComponent, TerefasComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
