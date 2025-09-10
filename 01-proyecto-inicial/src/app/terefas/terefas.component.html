@@ -7,9 +7,9 @@
   </header>
   <ul>
     @for (tarefa of tarefasUsuarioSelecionado; track tarefa.id) {
-    <li>
-      <app-tarefa [terefa]="tarefa" />
-    </li>
+      <li>
+        <app-tarefa [tarefa]="tarefa" (terminada)="aoCompletarTarefa($event)"/>
+      </li>
     }
   </ul>
 </section>

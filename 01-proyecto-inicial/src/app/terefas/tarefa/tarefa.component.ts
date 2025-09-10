@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { type Tarefa } from './tarefa.model';
 
 
@@ -10,5 +10,11 @@ import { type Tarefa } from './tarefa.model';
   styleUrl: './tarefa.component.css',
 })
 export class TarefaComponent {
-  @Input({required: true}) terefa!: Tarefa;
+  @Input({required: true}) tarefa!: Tarefa;
+  @Output() terminada = new EventEmitter<string>();
+
+
+  aoCompletarTarefas(){
+    this.terminada.emit(this.tarefa.id)
+  }
 }

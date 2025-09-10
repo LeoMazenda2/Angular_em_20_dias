@@ -391,4 +391,8 @@ export class TerefasComponent {
   get tarefasUsuarioSelecionado() {
     return this.tarefas.filter((tarefa) => tarefa.idUsuario === this.idUsuario);
   }
+
+  aoCompletarTarefa(id: string){
+    this.tarefas = this.tarefas.filter((tarefa) => tarefa.id !== id);
+  }
 }
