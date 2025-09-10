@@ -12,11 +12,12 @@ import { TerefasComponent } from "./terefas/terefas.component";
 })
 export class AppComponent {
   usuarios = USUARIOS_FALSOS;
-  idUsuarioSelecionado = 'u1';
+  idUsuarioSelecionado?: string;
 
   get usuariosSelecionado(){
     return this.usuarios.find((usuario) => usuario.id === this.idUsuarioSelecionado)!;
   }
+
   aoSelecionarUsuario(id: string){
     this.idUsuarioSelecionado = id;
   }
