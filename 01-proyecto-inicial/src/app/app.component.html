@@ -18,7 +18,17 @@
     </li>
     <li>
       <app-usuario
-        [usuario]="usuarios[6]"
+        [usuario]="usuarios[3]"
+        (selecionado)="aoSelecionarUsuario($event)"/>
+    </li>
+    <li>
+      <app-usuario
+        [usuario]="usuarios[4]"
+        (selecionado)="aoSelecionarUsuario($event)"/>
+    </li>
+    <li>
+      <app-usuario
+        [usuario]="usuarios[5]"
         (selecionado)="aoSelecionarUsuario($event)"/>
     </li>
     <li>

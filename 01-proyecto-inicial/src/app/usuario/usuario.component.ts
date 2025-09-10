@@ -1,5 +1,18 @@
 import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
+interface Usuario{
+   id: string,
+    nome: string,
+    avatar: string
+}
+
+// type Usuario = {
+//     id: string,
+//     nome: string,
+//     avatar: string
+//   };
+
+
 @Component({
   selector: 'app-usuario',
   standalone: true,
@@ -8,11 +21,7 @@ import { Component, EventEmitter, Input, output, Output } from '@angular/core';
   styleUrl: './usuario.component.css'
 })
 export class UsuarioComponent {
-  @Input({required: true}) usuario!: {
-    id: string,
-    nome: string,
-    avatar: string
-  };
+  @Input({required: true}) usuario!: Usuario ;
 
   @Output() selecionado = new EventEmitter();
   get rotaImagem() {
