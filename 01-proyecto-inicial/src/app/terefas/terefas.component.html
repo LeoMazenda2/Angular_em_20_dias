@@ -2,32 +2,14 @@
   <header>
     <h2>Tarefas de {{ nome }}</h2>
     <menu>
-      <button>Adicionar nova Tarefa</button>
+      <button>Adicionar tarefa</button>
     </menu>
   </header>
-
   <ul>
+    @for (tarefa of tarefasUsuarioSelecionado; track tarefa.id) {
     <li>
-      <app-tarefa />
+      <app-tarefa [terefa]="tarefa" />
     </li>
-    <li>
-      <app-tarefa />
-    </li>
-    <li>
-      <app-tarefa />
-    </li>
-    <li>
-      <app-tarefa />
-    </li>
-    <li>
-      <app-tarefa />
-    </li>
-    <li>
-      <app-tarefa />
-    </li>
-    <li>
-      <app-tarefa />
-    </li>
-    
+    }
   </ul>
 </section>
