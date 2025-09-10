@@ -1,21 +1,23 @@
 <app-cabecalho />
 <main>
   <ul id="usuarios">
-    @for (usuario of usuarios; track usuario.id) {
-    <li>
+    <!-- @for (usuario of usuarios; track usuario.id) { -->
+    <li *ngFor="let usuario of usuarios">
       <app-usuario
         [usuario]="usuario"
         (selecionado)="aoSelecionarUsuario($event)"
       />
     </li>
-    }
+    <!-- } -->
   </ul>
 
-  @if(usuariosSelecionado){
-  <app-terefas
-    [nome]="usuariosSelecionado.nome"/>
- }
- @else {
-    <p id="textoCondicional">Selecione um dos nomes da lista a esquerda</p>
- }
+  <!-- @if(usuariosSelecionado){ -->
+  <app-terefas *ngIf="usuariosSelecionado; else textoCondicional"
+    [nome]="usuariosSelecionado!.nome"/>
+ <!-- }
+ @else { -->
+ <ng-template #textoCondicional>
+   <p id="textoCondicional">Selecione um dos nomes da lista a esquerda</p>
+ </ng-template>
+ <!-- } -->
 </main>
