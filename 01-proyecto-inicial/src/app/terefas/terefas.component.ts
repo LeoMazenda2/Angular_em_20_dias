@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { TarefaComponent } from './tarefa/tarefa.component';
-import { NgClass } from "../../../node_modules/@angular/common/index";
 
 @Component({
   selector: 'app-terefas',

@@ -1,12 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { type Tarefa } from './tarefa.model';
 
-interface Tarefa {
-  id: string,
-  idUsuario: string,
-  titulo: string,
-  resume: string,
-  expira: string,
-}
 
 @Component({
   selector: 'app-tarefa',
