@@ -1,16 +1,18 @@
 import { Component, Input } from '@angular/core';
 import { TarefaComponent } from './tarefa/tarefa.component';
+import { NovaTarefaComponent } from "./nova-tarefa/nova-tarefa.component";
 
 @Component({
   selector: 'app-terefas',
   standalone: true,
-  imports: [TarefaComponent],
+  imports: [TarefaComponent, NovaTarefaComponent],
   templateUrl: './tarefas.component.html',
   styleUrl: './tarefas.component.css',
 })
 export class TarefasComponent {
   @Input({ required: true }) nome?: string;
   @Input({ required: true }) idUsuario!: string;
+  estaAdicionandoTarefaNova = false;
 
   tarefas = [
     {
@@ -392,7 +394,11 @@ export class TarefasComponent {
     return this.tarefas.filter((tarefa) => tarefa.idUsuario === this.idUsuario);
   }
 
-  aoCompletarTarefa(id: string){
+  aoCompletarTarefa(id: string) {
     this.tarefas = this.tarefas.filter((tarefa) => tarefa.id !== id);
+  }
+
+  aoIniciarNovaTarefa() {
+    this.estaAdicionandoTarefaNova = true
   }
 }
