@@ -5,10 +5,10 @@ import { TarefaComponent } from './tarefa/tarefa.component';
   selector: 'app-terefas',
   standalone: true,
   imports: [TarefaComponent],
-  templateUrl: './terefas.component.html',
-  styleUrl: './terefas.component.css',
+  templateUrl: './tarefas.component.html',
+  styleUrl: './tarefas.component.css',
 })
-export class TerefasComponent {
+export class TarefasComponent {
   @Input({ required: true }) nome?: string;
   @Input({ required: true }) idUsuario!: string;
 
