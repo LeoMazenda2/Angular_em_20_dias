@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nova-tarefa',
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './nova-tarefa.component.css'
 })
 export class NovaTarefaComponent {
+  @Output() cancelar = new EventEmitter<void>();
 
+  aoCancelar(){
+    this.cancelar.emit();
+  }
 }

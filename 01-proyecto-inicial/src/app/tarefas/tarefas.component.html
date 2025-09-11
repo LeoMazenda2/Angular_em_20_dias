@@ -1,5 +1,5 @@
 @if (estaAdicionandoTarefaNova) {
-<app-nova-tarefa />
+<app-nova-tarefa (cancelar)="aoCancelarNovaTarefa()" />
 }
 
 <section id="tarefas">

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TarefaComponent } from './tarefa/tarefa.component';
-import { NovaTarefaComponent } from "./nova-tarefa/nova-tarefa.component";
+import { NovaTarefaComponent } from './nova-tarefa/nova-tarefa.component';
 
 @Component({
   selector: 'app-terefas',
@@ -399,6 +399,10 @@ export class TarefasComponent {
   }
 
   aoIniciarNovaTarefa() {
-    this.estaAdicionandoTarefaNova = true
+    this.estaAdicionandoTarefaNova = true;
+  }
+
+  aoCancelarNovaTarefa() {
+    this.estaAdicionandoTarefaNova = false;
   }
 }
