@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { type Tarefa } from './tarefa.model';
+import { CartaoComponent } from "../../compartilhado/cartao/cartao.component";
 
 
 @Component({
   selector: 'app-tarefa',
   standalone: true,
-  imports: [],
+  imports: [CartaoComponent],
   templateUrl: './tarefa.component.html',
   styleUrl: './tarefa.component.css',
 })

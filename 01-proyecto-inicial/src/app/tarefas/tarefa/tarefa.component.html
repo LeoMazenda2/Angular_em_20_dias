@@ -1,8 +1,10 @@
-<article>
-  <h2>{{tarefa.titulo}}</h2>
-  <TIme>{{tarefa.expira}}</TIme>
-  <P>{{tarefa.resume}}</P>
-  <P class="acciones">
-    <button (click)="aoCompletarTarefas()">Terminada</button>
-  </P>
-</article>
+<app-cartao>
+  <article>
+    <h2>{{ tarefa.titulo }}</h2>
+    <TIme>{{ tarefa.expira }}</TIme>
+    <P>{{ tarefa.resume }}</P>
+    <P class="acciones">
+      <button (click)="aoCompletarTarefas()">Terminada</button>
+    </P>
+  </article>
+</app-cartao>
