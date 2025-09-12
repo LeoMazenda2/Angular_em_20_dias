@@ -16,6 +16,7 @@ export class TarefasComponent {
   @Input({ required: true }) idUsuario!: string;
   estaAdicionandoTarefaNova = false;
 
+  //injectar serviço no construtor
   constructor(public taregasService: TarefasService) {
 
   }
@@ -32,12 +33,7 @@ export class TarefasComponent {
     this.estaAdicionandoTarefaNova = true;
   }
 
-  aoCancelarNovaTarefa() {
-    this.estaAdicionandoTarefaNova = false;
-  }
-
-  aoAdicionarTarefa(infoTarefa: NovaTarefaInfo) {
-    this.taregasService.adiconarTArefa(infoTarefa, this.idUsuario);
+  aoFecharNovaTarefa() {
     this.estaAdicionandoTarefaNova = false;
   }
 }
