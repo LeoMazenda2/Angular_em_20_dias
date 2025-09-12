@@ -1,7 +1,7 @@
 <app-cartao>
   <article>
     <h2>{{ tarefa.titulo }}</h2>
-    <TIme>{{ tarefa.expira }}</TIme>
+    <TIme>{{ tarefa.expira | date: 'fullDate' }}</TIme>
     <P>{{ tarefa.resume }}</P>
     <P class="acciones">
       <button (click)="aoCompletarTarefas()">Terminada</button>
