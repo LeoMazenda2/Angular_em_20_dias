@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TarefaComponent } from './tarefa/tarefa.component';
 import { NovaTarefaComponent } from './nova-tarefa/nova-tarefa.component';
+import { type NovaTarefaInfo } from './tarefa/tarefa.model';
 
 @Component({
   selector: 'app-terefas',
@@ -404,5 +405,16 @@ export class TarefasComponent {
 
   aoCancelarNovaTarefa() {
     this.estaAdicionandoTarefaNova = false;
+  }
+
+    aoAdicionarTarefa(infoTarefa: NovaTarefaInfo) {
+      this.tarefas.unshift({
+        id: new Date().getTime.toString(),
+        titulo: infoTarefa.titulo,
+        resume: infoTarefa.resume,
+        expira: infoTarefa.data,
+        idUsuario: this.idUsuario
+      });
+      this.estaAdicionandoTarefaNova = false;
   }
 }

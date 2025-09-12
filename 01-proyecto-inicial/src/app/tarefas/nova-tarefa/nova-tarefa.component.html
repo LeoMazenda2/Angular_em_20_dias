@@ -1,7 +1,7 @@
 <div class="fondo" (click)="aoCancelar()"></div>
 <dialog open>
   <h2>Adicionar Tarefa</h2>
-  <form>
+  <form (ngSubmit)="aoEnviar()">
     <p>
       <label for="titulo">Titulo</label>
       <input type="text" id="titulo" name="titulo" [(ngModel)] ="tituloInserido" />

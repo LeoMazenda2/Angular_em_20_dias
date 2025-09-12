@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { type NovaTarefaInfo } from '../tarefa/tarefa.model';
 
 @Component({
   selector: 'app-nova-tarefa',
@@ -10,11 +11,20 @@ import { FormsModule } from '@angular/forms';
 })
 export class NovaTarefaComponent {
   @Output() cancelar = new EventEmitter<void>();
-  tituloInserido = signal ('');
-  resumeInserido = signal ('');
-  dataInserida = signal ('');
+  @Output() adicionar = new EventEmitter<NovaTarefaInfo>
+  tituloInserido = '';
+  resumeInserido = '';
+  dataInserida = '';
 
   aoCancelar() {
     this.cancelar.emit();
+  }
+
+  aoEnviar() {
+    this.adicionar.emit({
+      titulo: this.tituloInserido,
+      resume: this.resumeInserido,
+      data: this.dataInserida,
+    });
   }
 }
