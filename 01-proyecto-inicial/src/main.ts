@@ -1,6 +1,14 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-
 import { AppComponent } from './app/app.component';
-import { CabecalhoComponent } from './app/cabecalho/cabecalho.component';
+import { registerLocaleData } from '@angular/common';
+import localeAo from '@angular/common/locales/pt-AO'
+import { LOCALE_ID } from '@angular/core';
 
-bootstrapApplication(AppComponent).catch((err) => console.error(err));
+registerLocaleData(localeAo, 'pt-AO');
+
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    {provide: LOCALE_ID, useValue: 'pt-AO'},
+  ],
+}).catch((err) => console.error(err));
