@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { type Tarefa } from './tarefa.model';
-import { CartaoComponent } from "../../compartilhado/cartao/cartao.component";
+import { CartaoComponent } from '../../compartilhado/cartao/cartao.component';
 import { DatePipe } from '@angular/common';
+import { TarefasService } from '../tarefas.service';
 
 @Component({
   selector: 'app-tarefa',
@@ -11,11 +12,12 @@ import { DatePipe } from '@angular/common';
   styleUrl: './tarefa.component.css',
 })
 export class TarefaComponent {
-  @Input({required: true}) tarefa!: Tarefa;
-  @Output() terminada = new EventEmitter<string>();
+  @Input({ required: true }) tarefa!: Tarefa;
+  private taregasService = inject(TarefasService);
+  // constructor(public taregasService: TarefasService) {
+  // }
 
-
-  aoCompletarTarefas(){
-    this.terminada.emit(this.tarefa.id)
+  aoCompletarTarefas() {
+    this.taregasService.eliminarTarefa(this.tarefa.id);
   }
 }
