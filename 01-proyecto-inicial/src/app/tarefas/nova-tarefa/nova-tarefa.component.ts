@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,10 +10,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class NovaTarefaComponent {
   @Output() cancelar = new EventEmitter<void>();
-  tituloInserido = '';
-  resumeInserido = '';
-  dataInserida = '';
-  
+  tituloInserido = signal ('');
+  resumeInserido = signal ('');
+  dataInserida = signal ('');
+
   aoCancelar() {
     this.cancelar.emit();
   }
