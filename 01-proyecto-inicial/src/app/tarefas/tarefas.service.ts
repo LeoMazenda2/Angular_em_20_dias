@@ -2,13 +2,10 @@ import { Injectable } from '@angular/core';
 import { type NovaTarefaInfo } from './tarefa/tarefa.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TarefasService {
-
-  // constructor() { }
-
-    private tarefas = [
+  private tarefas = [
     {
       id: 't1',
       idUsuario: 'u1',
@@ -384,21 +381,34 @@ export class TarefasService {
     },
   ];
 
+  constructor() {
+    const tarefas = localStorage.getItem('tarefas');
+    if (tarefas) {
+      this.tarefas = JSON.parse(tarefas);
+    }
+  }
+
   obterTarefasDeUsuario(idUsuario: string) {
     return this.tarefas.filter((tarefa) => tarefa.idUsuario === idUsuario);
   }
 
   adiconarTArefa(infoTarefa: NovaTarefaInfo, idUsuario: string) {
     this.tarefas.unshift({
-        id: new Date().getTime.toString(),
-        titulo: infoTarefa.titulo,
-        resume: infoTarefa.resume,
-        expira: infoTarefa.data,
-        idUsuario: idUsuario
-      });
+      id: new Date().getTime.toString(),
+      titulo: infoTarefa.titulo,
+      resume: infoTarefa.resume,
+      expira: infoTarefa.data,
+      idUsuario: idUsuario,
+    });
+    this.guardarTarefas();
   }
 
-  eliminarTarefa(id: string){
+  eliminarTarefa(id: string) {
     this.tarefas = this.tarefas.filter((tarefa) => tarefa.id !== id);
+    this.guardarTarefas();
+  }
+
+  private guardarTarefas() {
+    localStorage.setItem('tarefas', JSON.stringify(this.tarefas));
   }
 }
