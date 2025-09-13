@@ -1,0 +1,19 @@
+@if (estaAdicionandoTarefaNova) {
+<app-nova-tarefa [idUsuario]="idUsuario" (fechar)="aoFecharNovaTarefa()"  />
+}
+
+<section id="tarefas">
+  <header>
+    <h2>Tarefas de {{ nome }}</h2>
+    <menu>
+      <button (click)="aoIniciarNovaTarefa()">Adicionar</button>
+    </menu>
+  </header>
+  <ul>
+    @for (tarefa of tarefasUsuarioSelecionado; track tarefa.id) {
+    <li>
+      <app-tarefa [tarefa]="tarefa"/>
+    </li>
+    }
+  </ul>
+</section>

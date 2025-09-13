@@ -1,0 +1,9 @@
+<app-cartao>
+  <button [class.active]="ativo" (click)="aoSelecionarUsuario()">
+    <img
+      [src]="rotaImagem"
+      alt=" {{ usuario.nome }}"
+      [title]="usuario.nome">
+    <span>{{ usuario.nome }}</span>
+  </button>
+</app-cartao>

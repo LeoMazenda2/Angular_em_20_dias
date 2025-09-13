@@ -1,0 +1,23 @@
+<app-cabecalho />
+<main>
+  <ul id="usuarios">
+    @for (usuario of usuarios; track usuario.id) {
+    <li>
+      <app-usuario
+        [usuario]="usuario"
+        [ativo]="usuario.id === idUsuarioSelecionado"
+        (selecionado)="aoSelecionarUsuario($event)"
+      />
+    </li>
+    }
+  </ul>
+
+  @if(usuariosSelecionado){
+  <app-terefas
+    [idUsuario]="usuariosSelecionado.id"
+    [nome]="usuariosSelecionado.nome"/>
+ }
+ @else {
+   <p id="textoCondicional">Selecione um dos nomes da lista a esquerda</p>
+ }
+</main>

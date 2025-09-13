@@ -1,0 +1,25 @@
+<div class="fondo" (click)="aoCancelar()"></div>
+<dialog open>
+  <h2>Adicionar Tarefa</h2>
+  <form (ngSubmit)="aoEnviar()">
+    <p>
+      <label for="titulo">Titulo</label>
+      <input type="text" id="titulo" name="titulo" [(ngModel)] ="tituloInserido" />
+    </p>
+
+    <p>
+      <label for="resumen">Resume</label>
+      <textarea id="resumen" rows="5" name="resumen" [(ngModel)] ="resumeInserido" ></textarea>
+    </p>
+
+    <p>
+      <label for="expira">Data Límite</label>
+      <input type="date" id="expira" name="expira" [(ngModel)] ="dataInserida" />
+    </p>
+
+    <p class="acciones">
+      <button (click)="aoCancelar()" type="button">Cancelar</button>
+      <button type="submit">Criar</button>
+    </p>
+  </form>
+</dialog>
