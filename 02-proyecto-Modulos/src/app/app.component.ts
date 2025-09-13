@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { CabecalhoComponent } from "./cabecalho/cabecalho.component";
-import { UsuarioComponent } from "./usuario/usuario.component";
 import { USUARIOS_FALSOS } from './usuario/usuarios-falsos';
-import { TarefasComponent } from "./tarefas/tarefas.component";
 
 @Component({
   selector: 'app-raiz',
-  standalone: true,
-  imports: [CabecalhoComponent, UsuarioComponent, TarefasComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
