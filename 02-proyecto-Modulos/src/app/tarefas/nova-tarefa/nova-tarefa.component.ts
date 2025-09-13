@@ -1,12 +1,8 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { type NovaTarefaInfo } from '../tarefa/tarefa.model';
 import { TarefasService } from '../tarefas.service';
 
 @Component({
   selector: 'app-nova-tarefa',
-  standalone: true,
-  imports: [FormsModule],
   templateUrl: './nova-tarefa.component.html',
   styleUrl: './nova-tarefa.component.css',
 })

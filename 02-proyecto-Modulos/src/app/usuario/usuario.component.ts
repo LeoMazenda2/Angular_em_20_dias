@@ -1,11 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { type Usuario } from './usuario.model';
-import { CartaoComponent } from "../compartilhado/cartao/cartao.component";
 
 @Component({
   selector: 'app-usuario',
-  standalone: true,
-  imports: [CartaoComponent],
   templateUrl: './usuario.component.html',
   styleUrl: './usuario.component.css'
 })
