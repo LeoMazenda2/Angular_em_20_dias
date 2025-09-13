@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
@@ -16,5 +16,8 @@ import { TarefasModule } from './tarefas/tarefas.module';
   ],
   bootstrap: [AppComponent],
   imports: [BrowserModule, CompartilhadoModule, TarefasModule],
+    providers: [
+    {provide: LOCALE_ID, useValue: 'pt-AO'},
+  ],
 })
 export class AppModule {}
