@@ -2,25 +2,42 @@
   <div class="grupo-entrada">
     <p>
       <label for="inversion-inicial">Inversão inicial</label>
-      <input id="inversion-inicial" type="number" />
+      <input
+        id="inversion-inicial"
+        name="inversion-inicial"
+        type="number"
+        [(ngModel)]="iversaoInivilInserida"
+      />
     </p>
-     <p>
+    <p>
       <label for="inversion-anual">Inversão Anual</label>
-      <input id="inversion-anual" type="number" />
+      <input
+        id="inversion-anual"
+        name="nversion-anual"
+        type="number"
+        [(ngModel)]="iversaoAnualInserida"
+      />
     </p>
   </div>
 
   <div class="grupo-entrada">
     <p>
       <label for="rendimiento-esperado">Faixa de Retorno Esperado</label>
-      <input id="rendimiento-esperado" type="number" />
+      <input
+        id="rendimiento-esperado"
+        name="rendimiento-esperado"
+        type="number"
+        [(ngModel)]="rendimenroEsperadoInserida"
+      />
     </p>
-     <p>
+    <p>
       <label for="duracion">Duração</label>
-      <input id="duracion" type="number" />
+      <input id="duracion"
+      name="duracion"
+      type="number"
+      [(ngModel)]="duracaoInserida" />
     </p>
   </div>
-
   <p>
     <button type="submit">Calcular</button>
   </p>
