@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, output, Output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { type IngressoInsersion } from '../ingresso-insersion.model';
+import { IngressoInsersion } from '../ingresso-insersion.model';
 
 @Component({
   selector: 'app-inseir-usuaio',
@@ -10,19 +10,24 @@ import { type IngressoInsersion } from '../ingresso-insersion.model';
   styleUrl: './inseir-usuaio.component.css',
 })
 export class InseirUsuaioComponent {
-  @Output() calcular = new EventEmitter<IngressoInsersion>()
+  calcular = output<IngressoInsersion>()
 
-  iversaoInivilInserida = '0';
-  iversaoAnualInserida = '0';
-  rendimenroEsperadoInserida = '5';
-  duracaoInserida = '10';
+  iversaoInivilInserida = signal('0');
+  iversaoAnualInserida = signal ('0');
+  rendimenroEsperadoInserida = signal ('5');
+  duracaoInserida = signal ('10');
 
   aoEnviar() {
     this.calcular.emit({
-    inversionInicial: +this.iversaoInivilInserida,
-    duracion: +this.duracaoInserida,
-    rendimientoEsperado: +this.rendimenroEsperadoInserida,
-    inversionAnual: +this.iversaoAnualInserida,
+    inversionInicial: +this.iversaoInivilInserida(),
+    duracion: +this.duracaoInserida(),
+    rendimientoEsperado: +this.rendimenroEsperadoInserida(),
+    inversionAnual: +this.iversaoAnualInserida(),
   });
+  this.iversaoInivilInserida.set('0')
+  this.iversaoAnualInserida.set('0')
+  this.rendimenroEsperadoInserida.set('5')
+  this.duracaoInserida.set('10')
+
   }
 }

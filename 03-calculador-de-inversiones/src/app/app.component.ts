@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { InseirUsuaioComponent } from './inseir-usuaio/inseir-usuaio.component';
 import { type IngressoInsersion } from './ingresso-insersion.model';
@@ -11,14 +11,15 @@ import { ResultadoInversionComponent } from "./resultado-inversion/resultado-inv
   imports: [CabecalhoComponent, InseirUsuaioComponent, ResultadoInversionComponent],
 })
 export class AppComponent {
-  infoResultados?: {
+  infoResultados = signal <{
     anio: number;
     interes: number;
     valorFinalAnio: number;
     inversionAnual: number;
     interesTotal: number;
     montoTotalInvertido: number;
-  }[];
+  }[] | undefined>(undefined);
+
 
   aoCalcularResultadosInversion(info: IngressoInsersion) {
     const {inversionInicial, inversionAnual, rendimientoEsperado, duracion } = info;
@@ -41,6 +42,6 @@ export class AppComponent {
       });
     }
 
-    this.infoResultados = datosAnuales;
+    this.infoResultados.set(datosAnuales);
   }
 }

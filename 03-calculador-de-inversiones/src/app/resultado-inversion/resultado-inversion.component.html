@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    @for (item of resultados; track item.anio) {
+    @for (item of resultados(); track item.anio) {
     <tr>
       <td>{{ item.anio }}</td>
       <td>{{ item.valorFinalAnio | currency }}</td>
