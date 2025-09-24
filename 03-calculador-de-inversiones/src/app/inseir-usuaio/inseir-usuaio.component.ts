@@ -1,11 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { InversionService } from '../inversion.service';
 
 @Component({
   selector: 'app-inseir-usuaio',
-  standalone: true,
-  imports: [FormsModule],
   templateUrl: './inseir-usuaio.component.html',
   styleUrl: './inseir-usuaio.component.css',
 })
