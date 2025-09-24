@@ -1,0 +1,28 @@
+table {
+  width: 100%;              /* ocupa largura total do container */
+  max-width: 50rem;         /* limite de largura */
+  margin: 2rem auto;        /* centraliza horizontalmente */
+  border-collapse: collapse; /* remove espaçamento entre células */
+  text-align: right;        /* alinha números à direita */
+}
+
+table th, table td {
+  padding: 0.5rem 1rem;      /* espaço interno */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* linha separadora */
+}
+
+table thead {
+  font-size: 0.8rem;
+  color: #83e6c0;
+  text-align: center;        /* cabeçalhos centralizados */
+}
+
+table tbody {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.9rem;
+  color: #c2e9c0;
+}
+
+table tbody td:first-child {
+  text-align: center; /* coluna "Ano" centralizada */
+}
