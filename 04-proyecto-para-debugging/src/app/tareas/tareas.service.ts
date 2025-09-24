@@ -43,7 +43,7 @@ export class TareasService {
   agregarTarea(infoDeTarea: NuevaTareaInfo, idUsuario: string) {
     this.tareas.unshift({
       id: new Date().getTime().toString(),
-      idUsuario: '',
+      idUsuario: idUsuario,
       titulo: infoDeTarea.titulo,
       resumen: infoDeTarea.resumen,
       expira: infoDeTarea.fecha,
