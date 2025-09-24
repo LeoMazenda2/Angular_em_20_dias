@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, Input, input, Output } from '@angular/core';
+import { Component, inject} from '@angular/core';
+import { InversionService } from '../inversion.service';
 
 @Component({
   selector: 'app-resultado-inversion',
@@ -9,13 +10,9 @@ import { Component, Input, input, Output } from '@angular/core';
   styleUrl: './resultado-inversion.component.css',
 })
 export class ResultadoInversionComponent {
-  resultados = input<
-    {
-      anio: number;
-      interes: number;
-      valorFinalAnio: number;
-      inversionAnual: number;
-      interesTotal: number;
-      montoTotalInvertido: number;
-    }[]> ();
+  private  inversionService = inject(InversionService)
+
+  get resultado () {
+    return this.inversionService.infoResultado;
+  }
 }
