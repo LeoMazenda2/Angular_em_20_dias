@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,16 +9,24 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './inseir-usuaio.component.css',
 })
 export class InseirUsuaioComponent {
+  @Output() calcular = new EventEmitter<{
+    inversionInicial: number,
+    duracion: number,
+    inversionAnual: number,
+    rendimientoEsperado: number,
+  }>()
+
   iversaoInivilInserida = '0';
   iversaoAnualInserida = '0';
   rendimenroEsperadoInserida = '5';
   duracaoInserida = '10';
 
   aoEnviar() {
-    console.log('Envio envidado');
-    console.log(this.iversaoInivilInserida);
-    console.log(this.iversaoAnualInserida);
-    console.log(this.rendimenroEsperadoInserida);
-    console.log(this.duracaoInserida);
+    this.calcular.emit({
+    inversionInicial: +this.iversaoInivilInserida,
+    duracion: +this.duracaoInserida,
+    rendimientoEsperado: +this.rendimenroEsperadoInserida,
+    inversionAnual: +this.iversaoAnualInserida,
+  });
   }
 }
