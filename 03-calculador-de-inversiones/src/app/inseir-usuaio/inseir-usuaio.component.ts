@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { type IngressoInsersion } from '../ingresso-insersion.model';
 
 @Component({
   selector: 'app-inseir-usuaio',
@@ -9,12 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './inseir-usuaio.component.css',
 })
 export class InseirUsuaioComponent {
-  @Output() calcular = new EventEmitter<{
-    inversionInicial: number,
-    duracion: number,
-    inversionAnual: number,
-    rendimientoEsperado: number,
-  }>()
+  @Output() calcular = new EventEmitter<IngressoInsersion>()
 
   iversaoInivilInserida = '0';
   iversaoAnualInserida = '0';

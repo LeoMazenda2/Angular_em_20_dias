@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { InseirUsuaioComponent } from './inseir-usuaio/inseir-usuaio.component';
+import { type IngressoInsersion } from './ingresso-insersion.model';
 
 @Component({
   selector: 'app-raiz',
@@ -9,12 +10,7 @@ import { InseirUsuaioComponent } from './inseir-usuaio/inseir-usuaio.component';
   imports: [CabecalhoComponent, InseirUsuaioComponent],
 })
 export class AppComponent {
-  aoCalcularResultadosInversion(info: {
-    inversionInicial: number,
-    duracion: number,
-    inversionAnual: number,
-    rendimientoEsperado: number,
-  }) {
+  aoCalcularResultadosInversion(info: IngressoInsersion) {
     const {inversionInicial, inversionAnual, rendimientoEsperado, duracion } = info;
     const datosAnuales = [];
     let valorInversion = inversionInicial;
