@@ -1,0 +1,10 @@
+<app-tarjeta>
+  <article>
+    <h2>{{ tarea.titulo }}</h2>
+    <time>{{ tarea.expira | date:'fullDate' }}</time>
+    <p>{{ tarea.resumen }}</p>
+    <p class="acciones">
+      <button (click)="alCompletarTarea()">Terminada</button>
+    </p>
+  </article>
+</app-tarjeta>
