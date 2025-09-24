@@ -15,10 +15,10 @@
     @for (item of resultados; track item.anio) {
     <tr>
       <td>{{ item.anio }}</td>
-      <td>{{ item.valorFinalAnio }}</td>
-      <td>{{ item.interes }}</td>
-      <td>{{ item.interesTotal }}</td>
-      <td>{{ item.montoTotalInvertido }}</td>
+      <td>{{ item.valorFinalAnio | currency }}</td>
+      <td>{{ item.interes | currency }}</td>
+      <td>{{ item.interesTotal | currency }}</td>
+      <td>{{ item.montoTotalInvertido | currency: "EUR" }}</td>
     </tr>
     }
   </tbody>
