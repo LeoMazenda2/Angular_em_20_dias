@@ -1,0 +1,18 @@
+<article>
+  <header>
+    <img src="estado.png" alt="Un simbolo de señal" />
+    <h2>Estado do Servidor</h2>
+  </header>
+  <div>
+    @if (estadoActual === 'online') {
+    <p>Los servidores están conectados</p>
+    <p>Todos los sistemas están operativos.</p>
+    } @else if (estadoActual === 'offline') {
+    <p>Los servidores están desconectados</p>
+    <p>La funcionalidad debería restaurarse pronto.</p>
+    } @else {
+    <p>El estado del servidor es desconocido</p>
+    <p>Falló el reconocimiento del servidor.</p>
+    }
+  </div>
+</article>
