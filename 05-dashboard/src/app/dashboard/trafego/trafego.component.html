@@ -1,18 +1,12 @@
-<article>
-  <header>
-    <img src="globo.png" alt="Un globo" />
-    <h2>Tráfico</h2>
-  </header>
-  <div id="trafico">
-    <p>Últimos 7 Días</p>
+<div id="trafico">
+  <p>Últimos 7 Días</p>
 
-    <div id="grafico">
-      @for (puntoInformacion of informacionTraficoFalsa; track
-      puntoInformacion.id) {
-      <div
-        [style.height]="(puntoInformacion.valor / traficoMaximo) * 100 + '%'"
-      ></div>
-      }
-    </div>
+  <div id="grafico">
+    @for (puntoInformacion of informacionTraficoFalsa; track
+    puntoInformacion.id) {
+    <div
+      [style.height]="(puntoInformacion.valor / traficoMaximo) * 100 + '%'"
+    ></div>
+    }
   </div>
-</article>
+</div>
