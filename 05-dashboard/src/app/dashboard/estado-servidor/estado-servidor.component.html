@@ -1,12 +1,12 @@
-<div>
+<div id="estado">
   @if (estadoActual === 'online') {
   <p>Os servidores estão conectados</p>
   <p>Todos os sistemas estão operativos.</p>
   } @else if (estadoActual === 'offline') {
   <p>Os servidores estão desconectados</p>
-  <p>La funcionalidade deveria restaurar-se pronto.</p>
+  <p>A funcionalidade deveria restaurar-se pronto.</p>
   } @else {
-  <p>O estado do servidor é desconocido</p>
-  <p>Falha no reconocimiento do servidor.</p>
+  <p>O estado do servidor é desconhecido</p>
+  <p>Falha no reconhecimento do servidor.</p>
   }
 </div>
