@@ -1,4 +1,4 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-elemento',
@@ -6,11 +6,14 @@ import { Component, input, Input } from '@angular/core';
   imports: [],
   templateUrl: './dashboard-elemento.component.html',
   styleUrl: './dashboard-elemento.component.css',
+  //  encapsulation: ViewEncapsulation.None,
+  //   host: {
+  //   class: 'dashboard-elemento'
+  // }
 })
 export class DashboardElementoComponent {
   // @Input({ required: true }) imagem!: { src: string; alt: string };
   // @Input({ required: true }) titulo!: string;
-
   imagem = input.required<{ src: string; alt: string }>();
   titulo = input.required<string>();
 }
